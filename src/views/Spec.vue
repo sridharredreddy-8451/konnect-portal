@@ -193,7 +193,6 @@ export default defineComponent({
     const appStore = useAppStore()
     const { isPublic } = storeToRefs(appStore)
 
-
     const objectParsers = [
       (x: string) => JSON.parse(x),
       (x: string) => jsyaml.load(x)
@@ -294,7 +293,6 @@ export default defineComponent({
     })
 
     watch(() => $route.params.product_version, async (productVersionId, oldValue) => {
-
       if (productVersionId && (oldValue !== productVersionId)) {
         isAllowedToRegister.value = await canUserAccess({
           action: 'register',
